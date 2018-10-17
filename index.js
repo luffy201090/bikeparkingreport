@@ -7,7 +7,7 @@ const path = require('path');
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('dist/bikepark'));
+app.use(express.static(__dirname + 'dist/bikepark'));
 
 app.post('/bikepark', (req, res) => {
   const { startDate, endDate, name, amount } = req.body;
